@@ -1,0 +1,5 @@
+To: naresh.shaw@gmail.com
+Subject: sendmail test two
+From: gatien41@gmail.com
+
+And here goes the e-mail body, test test test..

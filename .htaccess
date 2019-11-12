@@ -1,0 +1,237 @@
+
+RewriteOptions inherit
+RewriteEngine On
+RewriteRule ^qbmail - [L,NC]
+
+#errorDocument 400 error.html
+
+#errorDocument 401 error.html
+
+#errorDocument 404 error.html
+
+#errorDocument 500 error.html
+
+RewriteRule ^home$ home.php
+RewriteRule ^request/pending$ pending_request.php
+
+#pretty member profile url
+
+RewriteRule ^([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ member_profile.php?uname=$1
+
+RewriteRule ^([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ member_profile.php?uname=$1
+
+RewriteRule ^about/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ about.php?member_id=$1
+
+RewriteRule ^about/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ about.php?member_id=$1
+
+RewriteRule ^friends/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ member_friends.php?username=$1
+
+RewriteRule ^friends/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ member_friends.php?username=$1
+
+RewriteRule ^messages/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ messages.php?username=$1
+
+RewriteRule ^messages/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ messages.php?username=$1
+
+RewriteRule ^photos/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ photos.php?username=$1
+
+RewriteRule ^photos/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ photos.php?username=$1
+
+RewriteRule ^videos/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ videos.php?username=$1
+
+RewriteRule ^videos/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ videos.php?username=$1
+
+RewriteRule ^groups/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ groups.php?username=$1
+
+RewriteRule ^groups/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ groups.php?username=$1
+
+RewriteRule ^country/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ country_wall.php?country=$1
+
+RewriteRule ^country/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ country_wall.php?country=$1
+
+RewriteRule ^article/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ news_detail.php?url=$1
+
+RewriteRule ^article/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ news_detail.php?url=$1
+
+RewriteRule ^i/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ mywall.php?uname=$1
+
+RewriteRule ^i/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ mywall.php?uname=$1
+
+
+
+
+#pretty channel profile url
+
+RewriteRule ^user/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ subscribe-profile.php?username=$1
+
+RewriteRule ^user/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ subscribe-profile.php?username=$1-
+
+#pretty channel profile about url
+
+RewriteRule ^user/about/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ subscribe-about.php?username=$1
+
+RewriteRule ^user/about/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ subscribe-about.php?username=$1
+
+#pretty channel profile channel url
+
+RewriteRule ^user/channel/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)$ subscribe-channel.php?username=$1
+
+RewriteRule ^user/channel/([\sa-zA-Z0-9_-ÇéèÀÁÂÃÄÄÅÈÉÊËÑāăĉčď]+)/$ subscribe-channel.php?username=$1
+
+#event pretty url
+
+RewriteRule ^events/([a-zA-Z0-9_-Çéè]+)$ event_view.php?id=$1
+
+RewriteRule ^events/([a-zA-Z0-9_-Çéè]+)/$ event_view.php?id=$1
+
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+
+Header set Cache-Control "max-age=604800, public"
+
+</FilesMatch>
+
+<IfModule mod_headers.c>
+
+  <FilesMatch "\.(js|css|xml|gz)$">
+
+    Header append Vary: Accept-Encoding
+
+  </FilesMatch>
+
+</IfModule>
+
+<FilesMatch "\.(htm|html|php)$">
+    <IfModule mod_headers.c>
+        BrowserMatch MSIE ie
+        Header set X-UA-Compatible "IE=Edge,chrome=1" env=ie
+    </IfModule>
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Better website experience for IE users
+# ----------------------------------------------------------------------
+
+# Force the latest IE version, in various cases when it may fall back to IE7 mode
+#  github.com/rails/rails/commit/123eb25#commitcomment-118920
+# Use ChromeFrame if its installed for a better experience for the poor IE folk
+
+<IfModule mod_setenvif.c>
+  <IfModule mod_headers.c>
+    BrowserMatch MSIE ie
+    Header set X-UA-Compatible "IE=Edge,chrome=1" env=ie
+  </IfModule>
+</IfModule>
+
+<IfModule mod_headers.c>
+# Because X-UA-Compatible isnt sent to non-IE (to save header bytes),
+#   We need to inform proxies that content changes based on UA
+  Header append Vary User-Agent
+# Cache control is set only if mod_headers is enabled, so thats unncessary to declare
+</IfModule>
+
+
+# -----------------------------------------------------------------------
+
+# Defining MIME types to ensure the web server actually knows about them.
+
+# -----------------------------------------------------------------------
+
+<IfModule mod_mime.c>
+
+    AddType application/javascript          js
+
+    AddType application/vnd.ms-fontobject   eot
+
+    AddType application/x-font-ttf          ttf ttc
+
+    AddType font/opentype                   otf
+
+    AddType application/x-font-woff         woff
+
+    AddType image/svg+xml                   svg svgz 
+
+    AddEncoding gzip                        svgz
+    
+
+</Ifmodule>
+
+# -----------------------------------------------------------------------
+
+# Compressing output.
+
+# -----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+
+
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+
+    AddOutputFilterByType DEFLATE application/javascript
+
+    AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+
+    AddOutputFilterByType DEFLATE application/xhtml+xml application/rss+xml application/atom+xml
+
+    AddOutputFilterByType DEFLATE image/x-icon image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype
+
+</Ifmodule>
+
+
+
+
+
+AddDefaultCharset UTF-8
+
+Options +SymLinksIfOwnerMatch
+
+RewriteEngine on
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://quakbox.com/$1 [R,L]
+RewriteEngine On
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php
+RewriteRule ^index\.php$ / [L,R=301]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /home\.php
+RewriteRule ^home\.php$ / [L,R=301]
+
+# Audio
+AddType audio/ogg					  oga ogg
+AddType audio/mp4					  m4a f4a f4b
+# Video
+AddType video/ogg					  ogv
+AddType video/mp4					  mp4 m4v f4v f4p
+AddType video/webm					 webm
+AddType video/x-flv					flv
+
+
+#AuthName "Quakbox Development Area"
+#AuthType Basic
+#AuthUserFile /home/qbdevqb/public_html/.htpasswd
+#AuthGroupFile /dev/null
+#require valid-user
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php5_module>
+
+</IfModule>
+<IfModule lsapi_module>
+
+</IfModule>
+
+# END cPanel-generated php ini directives, do not edit
+
+<IfModule mod_php5.c>
+php_value upload_max_filesize 16000M
+php_value post_max_size 32000M
+php_value max_execution_time -1
+php_value max_input_time 0
+php_value memory_limit 64000M
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php56” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php56 .php .php5 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
